@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LectureRoute = void 0;
+const express_1 = __importDefault(require("express"));
+const lecture_controller_1 = require("./lecture.controller");
+const user_utils_1 = require("../User/user.utils");
+const auth_1 = __importDefault(require("../../middlewares/auth"));
+const validateRequest_1 = __importDefault(require("../../middlewares/validateRequest"));
+const lecture_validation_1 = require("./lecture.validation");
+const router = express_1.default.Router();
+router.post('/', (0, auth_1.default)(user_utils_1.USER_ROLE.admin), (0, validateRequest_1.default)(lecture_validation_1.createLectureZodSchema), lecture_controller_1.LectureController.createLecture);
+router.get('/', lecture_controller_1.LectureController.getLectures);
+router.get('/:id', lecture_controller_1.LectureController.getLectureById);
+router.get('/module/:moduleId', lecture_controller_1.LectureController.getLecturesByModule);
+router.patch('/:id', (0, auth_1.default)(user_utils_1.USER_ROLE.admin), (0, validateRequest_1.default)(lecture_validation_1.updateLectureZodSchema), lecture_controller_1.LectureController.updateLecture);
+router.delete('/:id', (0, auth_1.default)(user_utils_1.USER_ROLE.admin), lecture_controller_1.LectureController.deleteLecture);
+exports.LectureRoute = router;
