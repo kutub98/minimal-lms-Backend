@@ -22,7 +22,7 @@ app.use((0, cookie_parser_1.default)());
 app.use('/api/v1', routes_1.default);
 app.get('/', (req, res) => {
     res.status(200).json({
-        message: 'Welcome to the Apollo Gears API Service',
+        message: 'Welcome to the Minimal Lms',
     });
 });
 app.use(globalErrorhandler_1.default);
