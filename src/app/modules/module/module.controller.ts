@@ -11,7 +11,7 @@ import sendResponse from '../../utils/sendResponse';
   });
 };
 
- const getModules = async (_req: Request, res: Response) => {
+const getModules = async (_req: Request, res: Response) => {
   const modules = await ModuleService.getAllModules();
   sendResponse(res, {
       statusCode: 200, message: 'Modules fetched', data: modules,
@@ -47,10 +47,10 @@ import sendResponse from '../../utils/sendResponse';
   const result = await ModuleService.deleteModule(req.params.id);
   sendResponse(res, {
       statusCode: 200, message: 'Module deleted', data: result,
-      success: false
+  success: false
   });
 };
-export const ModuleController = {  
+export const ModuleController = {
     createModule,
     getModuleById,
     getModules,
