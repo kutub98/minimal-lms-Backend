@@ -16,7 +16,7 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const app = (0, express_1.default)();
 //parsers
 app.use(express_1.default.json());
-app.use((0, cors_1.default)({ origin: ['https://lms-minimal.netlify.app'] }));
+app.use((0, cors_1.default)({ origin: ['http://localhost:3000', 'https://lms-minimal.netlify.app'] }));
 app.use((0, cookie_parser_1.default)());
 // application routes
 app.use('/api/v1', routes_1.default);
