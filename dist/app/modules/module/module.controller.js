@@ -19,42 +19,42 @@ const createModule = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     const module = yield module_service_1.ModuleService.createModule(req.body);
     (0, sendResponse_1.default)(res, {
         statusCode: 201, message: 'Module created', data: module,
-        success: false
+        success: true
     });
 });
 const getModules = (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const modules = yield module_service_1.ModuleService.getAllModules();
     (0, sendResponse_1.default)(res, {
         statusCode: 200, message: 'Modules fetched', data: modules,
-        success: false
+        success: true
     });
 });
 const getModuleById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const module = yield module_service_1.ModuleService.getModuleById(req.params.id);
     (0, sendResponse_1.default)(res, {
         statusCode: 200, message: 'Module fetched', data: module,
-        success: false
+        success: true
     });
 });
 const getModulesByCourse = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const modules = yield module_service_1.ModuleService.getModulesByCourseId(req.params.courseId);
     (0, sendResponse_1.default)(res, {
         statusCode: 200, message: 'Modules for course fetched', data: modules,
-        success: false
+        success: true
     });
 });
 const updateModule = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const module = yield module_service_1.ModuleService.updateModule(req.params.id, req.body);
     (0, sendResponse_1.default)(res, {
         statusCode: 200, message: 'Module updated', data: module,
-        success: false
+        success: true
     });
 });
 const deleteModule = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield module_service_1.ModuleService.deleteModule(req.params.id);
     (0, sendResponse_1.default)(res, {
         statusCode: 200, message: 'Module deleted', data: result,
-        success: false
+        success: true
     });
 });
 exports.ModuleController = {
