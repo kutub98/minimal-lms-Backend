@@ -8,7 +8,7 @@ const courseSchema = new mongoose_1.Schema({
     price: { type: Number, required: true },
     description: { type: String, required: true },
     modules: [{ type: mongoose_1.Schema.Types.ObjectId, ref: 'Modules' }],
-    lectures: [{ type: mongoose_1.Schema.Types.ObjectId, ref: 'Lecture' }]
+    // lectures: [{ type: Schema.Types.ObjectId, ref: 'Lecture' }]
     // lectures: [{ type: Schema.Types.ObjectId, ref: 'Lecture' }]
 }, {
     timestamps: true,

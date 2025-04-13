@@ -6,5 +6,5 @@ export interface ICourse extends Document {
   price: number;
   description: string;
   modules: string[]; 
-  lectures: string[]
+  // lectures: string[]
 }

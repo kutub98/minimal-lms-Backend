@@ -8,7 +8,7 @@ const courseSchema = new Schema<ICourse>({
   price: { type: Number, required: true },
   description: { type: String, required: true },
   modules: [{ type: Schema.Types.ObjectId, ref: 'Modules' }],
-  lectures: [{ type: Schema.Types.ObjectId, ref: 'Lecture' }]
+  // lectures: [{ type: Schema.Types.ObjectId, ref: 'Lecture' }]
 // lectures: [{ type: Schema.Types.ObjectId, ref: 'Lecture' }]
 
 }, {
